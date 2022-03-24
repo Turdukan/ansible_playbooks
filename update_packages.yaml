@@ -1,6 +1,6 @@
 ---
 - name: update packages, install packages, create and insert line in a file 
-  hosts: localhost
+  hosts: managed_hosts
   tasks:
     - name: updating "yum" packages
       yum: 
