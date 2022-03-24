@@ -5,4 +5,27 @@
     - name: updating
       yum: 
         name: '*'
+        state: latest  
+
+    - name: vim tree wget curl
+      yum:
+        name:
+          - vim
+          - tree
+          - wget
+          - curl
         state: latest
+    - name: create a directory
+      file: 
+        path: /tmp/file1_ansible
+        state: touch
+    - name: writing in a file
+      blockinfile: 
+        path: /tmp/file1_ansible
+        block: |
+          This is line one
+          This is line two
+          
+
+
+
