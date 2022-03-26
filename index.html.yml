@@ -23,3 +23,8 @@
 
           </body>
           </html>
+    
+    - name: copy index.html to host1
+      copy:
+        src: /root/git-repos/ansible_playbooks/index.html
+        dest: /usr/share/nginx.yaml
