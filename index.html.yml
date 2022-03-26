@@ -1,0 +1,25 @@
+---
+- name: create index.html
+  hosts: localhost
+  tasks: 
+    - name: create index.html
+      file: 
+        path: /root/git-repos/ansible_playbooks/index.html
+        state: touch
+    - name: insert line to index.html
+      blockinfile: 
+        path: /root/git-repos/ansible_playbooks/index.html
+        block: |
+          <!DOCTYPE html>
+          <html>
+          <head>
+          <title>My Website</title>
+          </head>
+          <body>
+
+          <h1>Welcome to my page!</h1>
+          <p>This my awesome website.</p>
+          <img src="https://www.pexels.com/photo/3183197/download/?search_query=technology&tracking_id=27mp317lftr" alt="Italian Trulli">
+
+          </body>
+          </html>
