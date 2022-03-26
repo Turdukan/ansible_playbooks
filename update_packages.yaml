@@ -13,7 +13,6 @@
           - vim
           - tree
           - wget
-          - curl
         state: latest
     - name: create an empty file
       file: 
