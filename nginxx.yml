@@ -1,8 +1,8 @@
 ---
 - name: install nginx
-  hosts: 10.108.0.2
+  hosts: host1
   tasks: 
-    - name: add epel-release repo
+    - name: install epel-release repo
       yum:
         name: epel-release
         state: latest
@@ -13,6 +13,8 @@
         state: latest
 
     - name: start nginx
-      service: 
+      systemd: 
         name: nginx
         state: started
+        enabled: yes 
+
