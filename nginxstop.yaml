@@ -1,0 +1,9 @@
+---
+- name: stop nginx
+  hosts: 10.108.0.2
+  tasks:    
+    - name: stop nginx
+      systemd: 
+        name: nginx
+        state: stopped
+      when: ansible_distribution == "CentOS"

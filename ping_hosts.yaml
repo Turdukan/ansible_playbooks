@@ -5,5 +5,4 @@
   tasks: 
     - name: ping
       ping: 
-      when: ansible_distribution == "CentOS"
     
