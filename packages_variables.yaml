@@ -1,0 +1,19 @@
+--- 
+- name: bootstrap servers
+  hosts: group1
+  vars: 
+    packages: ["vim"]
+    state: "present" 
+  gather_facts: yes
+  tasks: 
+    - name: install packages on Centos
+      yum: 
+        name: "{{ packages}}"
+        state: "{{ state }}"
+      when: ansible_pkg_mgr == "yum" 
+
+    - name: install packages on Ubuntu
+      apt: 
+        name: "{{ packages }}"
+        state: "{{ state }}"
+      when: ansible_pkg_mgr == "apt"
